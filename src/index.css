@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --verde-claro: #90BE3D;
+    --verde-escuro: #15623F;
+    --grafite: #333D46;
+    --papel: #F8F5F1;
+    --branco: #FFFFFF;
+    --escuro: #1F262C;
+    --cinza-celula: #DDE1DC;
+    --linha: #E3DED6;
+  }
+
+  body {
+    background-color: #1F262C;
+    color: #FFFFFF;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Grafismo Oficial DS 1.0: Colmeia Escuro (até 35% atrás do texto - Pág. 19) */
+.bg-hex-pattern {
+  background-color: #1F262C;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%2390BE3D' stroke-width='1.2' stroke-opacity='0.18'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Grafismo Oficial DS 1.0: Colmeia Claro sobre Papel #F8F5F1 (Pág. 19) */
+.bg-hex-paper {
+  background-color: #F8F5F1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%2315623F' stroke-width='1.1' stroke-opacity='0.10'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.bg-grid-tech {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(144, 190, 61, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(144, 190, 61, 0.07) 1px, transparent 1px);
+}
+
+/* Custom Range Slider */
+input[type="range"].cm-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  outline: none;
+}
+
+input[type="range"].cm-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #90BE3D;
+  border: 3px solid #1F262C;
+  box-shadow: 0 0 15px rgba(144, 190, 61, 0.8);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"].cm-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #a8d84e;
+}
+
+/* Hexagon Clip Path (Pointy-top hexagon derived from the symbol - Pág. 19) */
+.clip-hex {
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
